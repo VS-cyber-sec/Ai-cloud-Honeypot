@@ -205,8 +205,8 @@ ai-cloud-honeypot/
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/VS-cyber-sec/ai-cloud-honeypot.git
-cd ai-cloud-honeypot
+git clone https://github.com/VS-cyber-sec/Ai-cloud-Honeypot.git
+cd Ai-cloud-Honeypot
 ```
 
 ### 2. Install Dependencies
@@ -227,8 +227,6 @@ Fill in your credentials:
 ```env
 SUPABASE_URL=https://xxxx.supabase.co
 SUPABASE_KEY=your-anon-key
-TELEGRAM_TOKEN=your-bot-token
-TELEGRAM_CHAT_ID=your-chat-id
 ML_HOST=http://your-ml-machine-ip:8765
 SYNC_SECRET=your-shared-secret
 ```
@@ -270,8 +268,6 @@ All configuration is managed through environment variables in `.env`:
 |---|---|---|
 | `SUPABASE_URL` | ✅ | Supabase project URL |
 | `SUPABASE_KEY` | ✅ | Supabase anon public key |
-| `TELEGRAM_TOKEN` | ✅ | Telegram Bot API token |
-| `TELEGRAM_CHAT_ID` | ✅ | Your Telegram chat ID |
 | `ML_HOST` | Optional | ML machine receiver URL |
 | `SYNC_SECRET` | Optional | Shared secret for sync auth |
 | `LOG_PATH` | Optional | Log file path (default: `packet_logger.log`) |
@@ -361,7 +357,6 @@ python3 -m pytest tests/ -v
 | GeoIP Resolution Rate | **100%** (public IPs) |
 | ML F1-Weighted Score | **0.87** (5-fold CV) |
 | Average Confidence Score | **0.91** |
-| Telegram Alert Delivery | **100%** |
 | Service Uptime | **99.9%** (auto-restart via systemd) |
 | Monthly Infrastructure Cost | **₹0** |
 
@@ -382,13 +377,10 @@ web_shell_probe     █                      1%
 
 | Name | Role | GitHub |
 |---|---|---|
-| **Vaishnavi Chavan** | Team Lead / ML Engineer | [@VS-cyber-sec](https://github.com/VS-cyber-sec) |
-| **Yuvraj Dudhal** | Network / Backend Engineer | — |
-| **Aniket Patil** | Cloud / DevOps Engineer | — |
-| **Akash Wavhal** | Frontend / Testing Engineer | — |
-
-**Guide:** Prof. Shilpa Vishwabrahma  
-**Institution:** Dr. D. Y. Patil College of Engineering & Innovation, Talegaon, Pune
+| **Vaishnavi Chavan** | Team Lead / Cloud & cyber security Engineer | [@VS-cyber-sec](https://github.com/VS-cyber-sec) |
+| **Yuvraj Dudhal** | Network / Backend & cyber security Engineer | — [@Yuv-glitch](https://github.com/Yuv-glitch) |
+| **Aniket Patil** | Ml Engineer | — |
+| **Akash Wavhal** | Testing Engineer | — |
 
 ---
 
@@ -422,6 +414,6 @@ MIT License — see [LICENSE](LICENSE) for details.
 
 **⭐ Star this repository if it helped your research ⭐**
 
-Made with 🔐 for cybersecurity research by Team VS-cyber-sec
+Made with 🔐 for cybersecurity research by Team Hackivate
 
 </div>

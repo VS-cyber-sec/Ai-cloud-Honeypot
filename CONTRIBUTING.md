@@ -1,7 +1,3 @@
-# Contributing
-
-Thank you for your interest in contributing to the AI-Driven Cloud Honeypot project.
-
 ## How to Contribute
 
 ### Reporting Issues

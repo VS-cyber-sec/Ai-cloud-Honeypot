@@ -1,0 +1,23 @@
+# ─────────────────────────────────────────────────────
+# AI-Driven Cloud Honeypot — Python Dependencies
+# Install: pip3 install -r requirements.txt
+# ─────────────────────────────────────────────────────
+
+# ── Core honeypot ─────────────────────────────────────
+paramiko>=3.0.0          # Deep-interaction SSH server (port 2222)
+requests>=2.31.0         # GeoIP API calls + Telegram Bot alerts
+
+# ── Machine learning ──────────────────────────────────
+scikit-learn>=1.3.0      # Random Forest classifier + pipeline
+pandas>=2.0.0            # Feature engineering + data manipulation
+numpy>=1.24.0            # Numerical operations
+joblib>=1.3.0            # Model serialisation (.pkl files)
+imbalanced-learn>=0.11.0 # SMOTE for class imbalance handling
+matplotlib>=3.7.0        # Confusion matrix + feature importance plots
+
+# ── Cloud integration ─────────────────────────────────
+supabase>=2.0.0          # Supabase PostgreSQL client
+
+# ── Dashboard + sync service ──────────────────────────
+flask>=3.0.0             # Dashboard API server (port 5000)
+flask-cors>=4.0.0        # CORS headers for dashboard frontend

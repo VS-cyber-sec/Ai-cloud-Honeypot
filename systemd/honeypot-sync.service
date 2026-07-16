@@ -1,0 +1,24 @@
+[Unit]
+Description=AI-Driven Cloud Honeypot — Log Sync Sender
+After=network.target honeypot.service
+Wants=honeypot.service
+Documentation=https://github.com/VS-cyber-sec/ai-cloud-honeypot
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ai-cloud-honeypot
+EnvironmentFile=/home/ubuntu/ai-cloud-honeypot/.env
+ExecStart=/usr/bin/python3 /home/ubuntu/ai-cloud-honeypot/sync/sync_sender.py \
+          --log /home/ubuntu/ai-cloud-honeypot/packet_logger.log \
+          --jsonl /home/ubuntu/ai-cloud-honeypot/packet_logger.jsonl \
+          --ml-host ${ML_HOST} \
+          --secret ${SYNC_SECRET} \
+          --interval 5
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

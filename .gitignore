@@ -1,0 +1,44 @@
+# Environment and secrets — NEVER commit these
+.env
+*.key
+*.pem
+honeypot_rsa.key
+.sync_state.json
+
+# Log files — contain real attacker data
+*.log
+*.jsonl
+logs/
+received/
+
+# ML model files — large binary files
+*.pkl
+*.joblib
+reports/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

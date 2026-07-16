@@ -1,0 +1,45 @@
+name: CI — Honeypot Test Suite
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Run unit tests
+        run: |
+          python -m pytest tests/ -v --cov=honeypot --cov=ml \
+            --cov-report=term-missing
+
+      - name: Syntax check all modules
+        run: |
+          python -m py_compile honeypot/packet_logger.py
+          python -m py_compile honeypot/geoip.py
+          python -m py_compile honeypot/alerts.py
+          python -m py_compile honeypot/cloud_logger.py
+          python -m py_compile ml/honeypot_model_v2.py
+          python -m py_compile dashboard/app.py
+          python -m py_compile sync/sync_sender.py
+          python -m py_compile sync/sync_receiver.py
+          echo "All modules syntax-valid"

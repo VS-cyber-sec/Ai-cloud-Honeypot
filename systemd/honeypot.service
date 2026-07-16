@@ -1,0 +1,18 @@
+[Unit]
+Description=AI-Driven Cloud Honeypot — Packet Logger
+After=network.target
+Documentation=https://github.com/VS-cyber-sec/ai-cloud-honeypot
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/ubuntu/ai-cloud-honeypot
+EnvironmentFile=/home/ubuntu/ai-cloud-honeypot/.env
+ExecStart=/usr/bin/python3 /home/ubuntu/ai-cloud-honeypot/honeypot/packet_logger.py
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

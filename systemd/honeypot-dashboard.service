@@ -1,0 +1,18 @@
+[Unit]
+Description=AI-Driven Cloud Honeypot — Flask Dashboard
+After=network.target honeypot.service
+Documentation=https://github.com/VS-cyber-sec/ai-cloud-honeypot
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu/ai-cloud-honeypot
+EnvironmentFile=/home/ubuntu/ai-cloud-honeypot/.env
+ExecStart=/usr/bin/python3 /home/ubuntu/ai-cloud-honeypot/dashboard/app.py --port 5000
+Restart=always
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
